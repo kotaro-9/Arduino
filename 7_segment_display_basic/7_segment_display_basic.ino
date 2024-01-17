@@ -27,7 +27,7 @@ void setup() {
 
 void sendToDisplay(int ziffer) { // * = Array-Parameter
   digitalWrite(LOAD, LOW); // LOAD auf LOW, um Latch-Vorgang zu aktivieren - Speichermodus
-  for(int i = 0; i < 16; i++) { // Schleife fuer 16 Bit Muster
+  for (int i = 0; i < 16; i++) { // Schleife fuer 16 Bit Muster
     digitalWrite(SCLK, LOW);
     digitalWrite(SDI, zahlen[ziffer][i]);
     Serial.print(zahlen[ziffer][i]);
