@@ -35,7 +35,7 @@ void to16Bits(int nummer) {
   } else if (nummer <= -1 && nummer >= -9) { // -1 - -9
     for (int i = 0; i < 8; i++) {
       zahl[i] = ziffern[-1][i];
-      zahl[i + 8] = ziffern[(nummer*(-1))]; 
+      zahl[i + 8] = ziffern[(nummer * (-1))]; 
     }
     sendToDisplay();
   } else if (nummer > 99) { // >99
@@ -66,12 +66,10 @@ void sendToDisplay() {
 }
 
 void loop() {
-  /* Test 0-99
   for(int i = 0; i <= 99; i++) {
     to16Bits(i);
     delay(1000);
   }
-  */
 }
 
 // temp erfassung und berechnung einbauen
