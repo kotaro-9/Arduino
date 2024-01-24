@@ -23,7 +23,9 @@ void userInput() {
   Serial.println(green);
   Serial.println(blue);
 
-  setColor(red, blue, green);
+  if (red != 0 || green != 0 || blue != 0) {
+    setColor(red, blue, green);
+  }
 }
 
 void setColor(int red, int blue, int green) {
