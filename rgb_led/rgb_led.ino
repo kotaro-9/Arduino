@@ -20,7 +20,9 @@ void userInput() {
   blue = constrain(blue, 0, 255);
 
   if (red >= 0 && red <= 255 || green >= 0 && green <= 255 || blue >= 0 && blue <= 255) {
-    Serial.print("red: " + String(red) + "green: " + String(green) + "blue: " + String(blue));
+    Serial.println(red);
+    Serial.println(green);
+    Serial.println(blue);
   }
 
   setColor(red, blue, green);
