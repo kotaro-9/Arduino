@@ -19,6 +19,10 @@ void userInput() {
   green = constrain(green, 0, 255);
   blue = constrain(blue, 0, 255);
 
+  if (red >= 0 && red <= 255 || green >= 0 && green <= 255 || blue >= 0 && blue <= 255) {
+    Serial.print("red: " + red + "green: " + green + "blue: " + blue);
+  }
+
   setColor(red, blue, green);
 }
 
@@ -28,8 +32,7 @@ void setColor(int red, int blue, int green) {
 	analogWrite(greenPin, blue);
 }
 
-void loop() {
-  setColor(255, 255, 0);
+void loop() { 
   userInput();
-  delay(1000);
+  delay(3000);
 }
