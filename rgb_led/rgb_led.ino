@@ -9,7 +9,7 @@ void setup() {
 }
 
 void userInput() {
-  Serial.begin(4800);
+  Serial.begin(9600);
   int red = Serial.parseInt();
   int blue = Serial.parseInt();
   int green = Serial.parseInt();
@@ -19,11 +19,9 @@ void userInput() {
   green = constrain(green, 0, 255);
   blue = constrain(blue, 0, 255);
 
-  if (red >= 0 && red <= 255 || green >= 0 && green <= 255 || blue >= 0 && blue <= 255) {
-    Serial.println(red);
-    Serial.println(green);
-    Serial.println(blue);
-  }
+  Serial.println(red);
+  Serial.println(green);
+  Serial.println(blue);
 
   setColor(red, blue, green);
 }
