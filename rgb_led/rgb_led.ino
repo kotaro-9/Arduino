@@ -2,17 +2,14 @@ int redPin = 11;
 int greenPin = 10;
 int bluePin = 9;
 
-bool randomColor = false;
-
 void setup() {
+  Serial.begin(9600);
 	pinMode(redPin, OUTPUT);
-	pinMode(bluePin, OUTPUT);
 	pinMode(greenPin, OUTPUT);
-  randomSeed(analogRead(0));
+	pinMode(bluePin, OUTPUT);
 }
 
 void userCustomColor() {
-  Serial.begin(9600);
   int red = Serial.parseInt();
   int blue = Serial.parseInt();
   int green = Serial.parseInt();
@@ -27,26 +24,17 @@ void userCustomColor() {
   Serial.println(blue);
 
   if (red != 0 || green != 0 || blue != 0) {
-    setColor(red, blue, green);
+    sendColor(red, blue, green);
   }
 }
 
-void setRandomColor() {
-  setColor(random(256), random(256), random(256));
-}
-
-void setColor(int red, int blue, int green) {
+void sendColor(int red, int blue, int green) {
 	analogWrite(redPin, red);
 	analogWrite(bluePin, green);
 	analogWrite(greenPin, blue);
 }
 
 void loop() {
-  if (randomColor = false) {
-    userCustomColor();
-  } else {
-    randomColor = true;
-
-  }
+  userCustomColor();
   delay(3000);
 }
