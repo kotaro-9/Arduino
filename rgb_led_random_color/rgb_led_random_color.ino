@@ -5,7 +5,6 @@ int bluePin = 9;
 bool randomColor = false;
 
 void setup() {
-  Serial.begin(9600);
 	pinMode(redPin, OUTPUT);
 	pinMode(bluePin, OUTPUT);
 	pinMode(greenPin, OUTPUT);
